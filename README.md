@@ -1,5 +1,6 @@
 # LightSail_App
 Deployment of a Python app on an Amazon LightSail Ubuntu Linux server
+LOCATION: http://ec2-18-221-215-100.us-east-2.compute.amazonaws.com/
 
 ## Establish Account and Ubuntu Instance
 1. Establish account at lightsail.aws.amazon.com.
@@ -156,11 +157,11 @@ Check for a successful installation by visiting your instance IP address in your
 http://1.2.3.4
 A successful install of the Apache server will show an Ubuntu/Apache2 "It Works" page.
 
-# Install Python mod_wsgi
+## Install Python mod_wsgi
 `sudo apt-get install libapache2-mod-wsgi`
 
-# Test a Python-Flask App:
-## Create a backup directory, then save the default configuration file as a backup:
+## Test a Python-Flask App:
+### Create a backup directory, then save the default configuration file as a backup:
 ```
 cd /etc/apache2/sites-enabled
 mkdir backup
