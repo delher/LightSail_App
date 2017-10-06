@@ -376,21 +376,3 @@ Restart the www server after any changes to the .conf or .wsgi files:
 ### Error Log
 If the server is not working, check the Apache server error log:
 `less /var/log/apache2/error.log`
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
