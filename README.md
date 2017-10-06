@@ -24,10 +24,10 @@ Test the key and ssh connection on the ssh default port. If your key file is not
 `ssh - i </path/>LS_key.pem ubuntu@1.1.1.1`
 
 ## Port Setup
-Open the 2200 port for incoming data in the Lightsail configuration
+Open the 123 (NTP) and 2200 (SSH) ports for incoming data in the Lightsail configuration
 https://lightsail.aws.amazon.com/ls/webapp/us-east-2/instances/InstanceName/networking
 (3-dot menu > Manage > Networking tab)
-Open a port with TCP protocol at port 2200.
+Open a port with TCP protocol at ports 123 and 2200.
 
 ## Configure SSH
 ### Connect at Port 2200 Instead of Port 22
@@ -59,12 +59,14 @@ When you remove the port 22 configuration, it will break your SSH pipe, so you'l
 ### Make sure the firewall is inactive:
 `sudo ufw status`
 
-### Configure the firewall:
+### Configure the UFW firewall:
 ```
 sudo ufw deny 22
 sudo ufw allow ssh
 sudo ufw allow www
+sudo ufw allow ntp
 sudo ufw allow 2200/tcp
+sudo ufw allow 123/tcp
 ```
 
 ### CONFIRM YOU HAVE SSH ACCESS ON PORT 2200 BEFORE PROCEEDING.
